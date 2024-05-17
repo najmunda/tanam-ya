@@ -1,7 +1,7 @@
 import React from 'react';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
 
-const cardStyle = 'h-60 p-3 flex flex-col shadow-md rounded cursor-pointer';
+const cardStyle = 'h-60 w-48 p-3 flex flex-col shadow-md rounded cursor-pointer';
 
 export function AddProductCard() {
   return (
