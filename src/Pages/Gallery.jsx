@@ -12,16 +12,10 @@ const plants = [
 ];
 
 export default function Gallery() {
-  document.getElementById('root').setAttribute('class', 'h-full min-h-dvh flex flex-col justify-start items-stretch bg-green-100');
-  const gridResponsive = `
-    grid-cols-2 
-    sm:grid-cols-3 
-    md:grid-cols-4 
-    lg:grid-cols-5
-    xl:grid-cols-6
-    2xl:grid-cols-7
-  `;
+  
+  document.getElementById('root').setAttribute('class', 'h-dvh flex flex-col justify-start items-stretch');
   const flex = 'flex flex-row flex-wrap justify-center items-start';
+
   return (
     <>
       <Header />
