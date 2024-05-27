@@ -46,6 +46,7 @@ export default function Gallery() {
   return (
     <>
       <Header
+        route="Gallery"
         isSearchActive={isSearchActive}
         handleSearchButton={() => { setIsSearchActive(!isSearchActive); }}
         searchString={searchString}

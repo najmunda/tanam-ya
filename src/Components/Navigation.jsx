@@ -11,11 +11,11 @@ import {
 } from '@heroicons/react/24/solid';
 
 export default function Navigation({ setNavBar }) {
-  const navItemStyle = 'py-3 flex flex-row items-center gap-3 text-white text-xl font-medium cursor-pointer';
+  const navItemStyle = 'py-3 px-3 flex flex-row items-center gap-3 text-white text-xl font-medium cursor-pointer';
   const navIconStyle = 'size-8';
   return (
-    <nav className="z-10 h-dvh w-full fixed top-0 left-0 backdrop-blur">
-      <menu className="h-full w-4/6 px-3 flex flex-col justify-center items-stretch bg-green-600 rounded-r-md">
+    <nav className="z-10 h-dvh w-full fixed top-0 left-0 flex flex-row-reverse backdrop-blur">
+      <menu className="h-full w-5/6 px-3 flex flex-col justify-center items-stretch bg-green-600 rounded-l-md">
         <XMarkIcon className="size-8 cursor-pointer self-center" onClick={() => { setNavBar(false); }} />
         <br />
         <img src="/app-icon-white.svg" alt="" className="size-20 cursor-pointer self-center" />
