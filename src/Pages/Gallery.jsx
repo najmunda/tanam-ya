@@ -9,7 +9,7 @@ const plants = [
     popName: 'Lidah Buaya',
     scienceName: 'Aloe Vera',
     focus: 'leaf',
-    imageUrl: '/plant/1.jpeg',
+    imageUrl: '',
   },
   {
     id: 2,

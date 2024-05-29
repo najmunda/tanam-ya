@@ -40,14 +40,14 @@ export default function ProductDetail() {
             className="size-12"
           />
         </div>
-        {/* ONLINE SHOP LINKS */}
+        {/* LINKS */}
+        <a href="whatsapp.com" className={`${cardStyle} px-5 bg-[#42b549] text-white flex-row justify-center items-center gap-3 cursor-pointer`}>
+          <img src="/whatsapp-icon.svg" alt="Hubungi via Whatsapp" className="h-8" />
+          <p className="leading-none text-xl font-medium">Hubungi via Whatsapp</p>
+        </a>
         <a href="shopee.co.id" className={`${cardStyle} px-5 bg-[#ee4d2d] text-white flex-row justify-center items-center gap-3 cursor-pointer`}>
           <p className="leading-none text-xl font-medium">Beli via</p>
           <img src="/Shopee.svg" alt="Beli tanaman ini via Shopee" className="h-8" />
-        </a>
-        <a href="tokopedia.co.id" className={`${cardStyle} px-5 bg-[#42b549] text-white flex-row justify-center items-center gap-3 cursor-pointer`}>
-          <p className="leading-none text-xl font-medium">Beli via</p>
-          <img src="/Tokopedia.svg" alt="Beli tanaman ini via Tokopedia" className="h-8" />
         </a>
         {/* DETAIL */}
         <div className={`${cardStyle} p-3 bg-neutral-50 flex-col justify-between items-stretch gap-3`}>

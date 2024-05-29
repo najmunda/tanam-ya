@@ -17,10 +17,10 @@ export default function Header({
     case 'ProductDetail':
       return (
         <header className={className}>
-          <ArrowLeftIcon className="size-9 cursor-pointer" />
+          <ArrowLeftIcon className="size-8 cursor-pointer" />
+          <img src="/app-icon-white.svg" alt="" className="size-11 cursor-pointer" />
           <Bars3Icon className="size-9 cursor-pointer" onClick={() => { setNavBar(true); }} />
           {navBar && <Navigation setNavBar={setNavBar} />}
-          <FloatingWhatsappButton />
         </header>
       );
     case 'Gallery':
