@@ -5,9 +5,14 @@ export default function Signin() {
   document.getElementById('root').setAttribute('class', 'h-dvh min-h-dvh flex flex-col justify-center items-center bg-neutral-100');
   return (
     <main className="w-full flex flex-col items-center gap-5">
-      <form action="" className="w-3/5 p-3 flex flex-col items-center gap-2 bg-neutral-50 shadow-md shadow-neutral-200 border border-neutral-200 rounded">
+      { true ? (
+        <MoonIcon className="size-10 text-neutral-300" />
+      ) : (
+        <SunIcon className="size-10 text-neutral-300" />
+      )}
+      <form action="" className="w-3/5 max-w-72 p-3 flex flex-col items-center gap-2 bg-neutral-50 shadow-md shadow-neutral-200 border border-neutral-200 rounded">
         <img src="/app-icon.svg" alt="App Logo" className="size-16" />
-        <h2 className="text-xl font-medium">Sign in as Admin</h2>
+        <h2 className="text-xl font-medium text-center">Masuk sebagai Admin</h2>
         <hr />
         <p className="w-full p-2 bg-red-600 text-white text-center font-medium rounded">Akun tidak ditemukan</p>
         <hr />
@@ -19,9 +24,8 @@ export default function Signin() {
         </button>
         <hr />
         <button type="button">Lupa Password?</button>
+        <button type="button">Kembali ke website</button>
       </form>
-      <MoonIcon className="size-10 text-neutral-300" />
-      <SunIcon className="size-10 text-neutral-300" />
     </main>
   );
 }
