@@ -5,8 +5,6 @@ import FloatingWhatsappButton from './FloatingWhatsappButton';
 
 export default function Header({
   route,
-  isSearchActive,
-  handleSearchButton,
   searchString,
   handleSearchForm
 }) {
@@ -18,7 +16,6 @@ export default function Header({
       return (
         <header className={className}>
           <ArrowLeftIcon className="size-8 cursor-pointer" />
-          <img src="/app-icon-white.svg" alt="" className="size-11 cursor-pointer" />
           <Bars3Icon className="size-9 cursor-pointer" onClick={() => { setNavBar(true); }} />
           {navBar && <Navigation setNavBar={setNavBar} />}
         </header>
@@ -26,35 +23,37 @@ export default function Header({
     case 'Gallery':
       return (
         <header className={className}>
-          {isSearchActive ? (
-            // SEARCH BAR
-            <form name="search-form" className="flex-1 px-5 py-2 flex flex-row items-center gap-3 bg-green-500 rounded-full">
-              <MagnifyingGlassIcon className="size-7 bg-inherit text-green-200" />
-              <input
-                type="text"
-                placeholder="Search Plant..."
-                value={searchString}
-                onChange={(e) => { handleSearchForm(e.target.value); }}
-                className="w-full bg-inherit text-lg placeholder-green-200 font-medium focus:outline-0"
-              />
+          {/* SEARCH BAR */}
+          <form name="search-form" className="flex-1 px-5 py-2 flex flex-row items-center gap-3 bg-green-500 rounded-full">
+            <MagnifyingGlassIcon className="size-7 bg-inherit text-green-200" />
+            <input
+              type="text"
+              placeholder="Cari Tanaman..."
+              value={searchString}
+              onChange={(e) => { handleSearchForm(e.target.value); }}
+              className="w-full bg-inherit text-lg placeholder-green-200 font-medium focus:outline-0"
+            />
+            {
+              searchString && (
               <XMarkIcon
-                onClick={() => { if (searchString.length === 0) { handleSearchButton(); } else { handleSearchForm(''); } }}
+                onClick={() => { handleSearchForm(''); }}
                 className="size-7 bg-inherit text-green-200"
               />
-            </form>
-          ) : (
-            // HEADER
-            <>
-              <MagnifyingGlassIcon
-                className="size-9 cursor-pointer"
-                onClick={handleSearchButton}
-              />
-              <img src="/app-icon-white.svg" alt="" className="size-11 cursor-pointer" />
-            </>
-          )}
+              )
+            }
+          </form>
           <Bars3Icon className="size-9 cursor-pointer" onClick={() => { setNavBar(true); }} />
           {navBar && <Navigation setNavBar={setNavBar} />}
           <FloatingWhatsappButton />
+        </header>
+      );
+    case 'About':
+      return (
+        <header className={className}>
+          <ArrowLeftIcon className="size-8 cursor-pointer" />
+          <img src="/app-icon-white.svg" alt="" className="size-11 cursor-pointer" />
+          <Bars3Icon className="size-9 cursor-pointer" onClick={() => { setNavBar(true); }} />
+          {navBar && <Navigation setNavBar={setNavBar} />}
         </header>
       );
     default:
