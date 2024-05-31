@@ -19,7 +19,7 @@ export default function ProductDetail() {
       <Header route="ProductDetail" />
       <main className="w-full p-3 flex flex-col items-stretch gap-3">
         {/* PHOTO */}
-        <div className={`${cardStyle} h-1/2 p-0 bg-neutral-50 flex-col justify-between gap-3`}>
+        <div className={`${cardStyle} h-[calc(100vh * 0.5)] p-0 bg-neutral-50 flex-col justify-between gap-3`}>
           {plant.imageUrl ? (
             <img src={plant.imageUrl} alt={plant.popName} className="h-full object-cover object-center rounded-sm" />
           ) : (
@@ -51,14 +51,14 @@ export default function ProductDetail() {
         </a>
         {/* DETAIL */}
         <div className={`${cardStyle} p-3 bg-neutral-50 flex-col justify-between items-stretch gap-3`}>
-          <div className="flex flex-row justify-between items-center">
+          <button type="button" className="flex flex-row justify-between items-center" onClick={() => { setIsDetailActive(!isDetailActive); }}>
             <h1 className="leading-none text-xl font-medium">Detail Tanaman</h1>
             {isDetailActive ? (
-              <ChevronUpIcon className="size-8" onClick={() => { setIsDetailActive(false); }} />
+              <ChevronUpIcon className="size-8" />
             ) : (
-              <ChevronDownIcon className="size-8" onClick={() => { setIsDetailActive(true); }} />
+              <ChevronDownIcon className="size-8" />
             )}
-          </div>
+          </button>
           {isDetailActive && (
           <>
             <hr />
@@ -72,7 +72,7 @@ export default function ProductDetail() {
               <h2 className="text-lg font-medium">Jenis Akar</h2>
               <p className="leading-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, beatae.</p>
               <br />
-              <h2 className="text-lg font-medium">Tinggi Tanaman</h2>
+              <h2 className="text-lg font-medium">Ukuran Tanaman</h2>
               <p className="leading-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, beatae.</p>
               <br />
               <h2 className="text-lg font-medium">Palet Warna</h2>
