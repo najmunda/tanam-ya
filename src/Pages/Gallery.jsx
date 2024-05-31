@@ -36,7 +36,6 @@ const plants = [
 
 export default function Gallery() {
   document.getElementById('root').setAttribute('class', 'h-dvh flex flex-col justify-start items-stretch');
-  const [isSearchActive, setIsSearchActive] = useState(false);
   const [searchString, setSearchString] = useState('');
 
   const items = plants.filter(
@@ -47,8 +46,6 @@ export default function Gallery() {
     <>
       <Header
         route="Gallery"
-        isSearchActive={isSearchActive}
-        handleSearchButton={() => { setIsSearchActive(!isSearchActive); }}
         searchString={searchString}
         handleSearchForm={(str) => { setSearchString(str); }}
       />
@@ -68,7 +65,7 @@ export default function Gallery() {
         <main className="w-full h-full p-3 flex flex-col justify-center items-center gap-2">
           <ArchiveBoxXMarkIcon className="text-neutral-400 size-24" />
           <p className="text-xl text-wrap font-normal text-neutral-400">
-            {isSearchActive && items.length !== 0 ? 'Tanaman tidak ditemukan :(' : 'Tanaman baru belum ditambahkan :('}
+            {searchString.length !== 0 ? 'Tanaman tidak ditemukan :(' : 'Tanaman baru belum ditambahkan :('}
           </p>
         </main>
       )}
