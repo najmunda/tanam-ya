@@ -37,8 +37,6 @@ export default function Navigation({ setNavBar }) {
         ) : (
           <SunIcon className="text-white text-center size-9 self-center" />
         )}
-        
-        
       </menu>
     </nav>
   );

@@ -4,14 +4,28 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
-import Root from './Routes/Root';
-import Signin from './Pages/Signin';
+import Root, { loader as rootLoader } from './Routes/root';
+import Gallery from './Routes/gallery';
+import PlantDetail, { loader as plantLoader } from './Routes/plant';
 import './index.css';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    loader: rootLoader,
+    children: [
+      {
+        path: '',
+        element: <Gallery />,
+        loader: rootLoader,
+      },
+      {
+        path: 'plant/:plantId',
+        element: <PlantDetail />,
+        loader: plantLoader,
+      },
+    ],
   },
   /*
   {
@@ -34,10 +48,6 @@ const router = createBrowserRouter([
     ],
   },
   */
-  {
-    path: '/signin',
-    element: <Signin />,
-  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
